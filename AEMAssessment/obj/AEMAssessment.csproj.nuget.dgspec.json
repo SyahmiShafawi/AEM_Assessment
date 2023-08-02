@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\backup\\AEM test baru\\AEM_Test\\AEMAssessment\\AEMAssessment\\AEMAssessment.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\AEM_Assessment\\AEMAssessment\\AEMAssessment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\backup\\AEM test baru\\AEM_Test\\AEMAssessment\\AEMAssessment\\AEMAssessment.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\AEM_Assessment\\AEMAssessment\\AEMAssessment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\backup\\AEM test baru\\AEM_Test\\AEMAssessment\\AEMAssessment\\AEMAssessment.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\AEM_Assessment\\AEMAssessment\\AEMAssessment.csproj",
         "projectName": "AEMAssessment",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\backup\\AEM test baru\\AEM_Test\\AEMAssessment\\AEMAssessment\\AEMAssessment.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\AEM_Assessment\\AEMAssessment\\AEMAssessment.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\backup\\AEM test baru\\AEM_Test\\AEMAssessment\\AEMAssessment\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\AEM_Assessment\\AEMAssessment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,17 +46,52 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
