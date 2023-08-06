@@ -48,7 +48,7 @@ namespace AEMAssessment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlatformWellActuals");
+                    b.ToTable("PlatformWellActual");
                 });
 
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual+Well", b =>
@@ -92,13 +92,13 @@ namespace AEMAssessment.Migrations
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual+Well", b =>
                 {
                     b.HasOne("AEMWebApplication.Models.PlatformWellActual", null)
-                        .WithMany("Wells")
+                        .WithMany("well")
                         .HasForeignKey("PlatformWellActualId");
                 });
 
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual", b =>
                 {
-                    b.Navigation("Wells");
+                    b.Navigation("well");
                 });
 #pragma warning restore 612, 618
         }

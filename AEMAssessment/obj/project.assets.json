@@ -3549,6 +3549,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.9",
+      "Microsoft.Extensions.Caching.Memory >= 7.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Newtonsoft.Json >= 13.0.3"
     ]
@@ -3616,6 +3617,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.9, )"
+          },
+          "Microsoft.Extensions.Caching.Memory": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
