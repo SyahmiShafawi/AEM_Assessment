@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AEMWebApplication.Models
 {
     public class PlatformWellActual
@@ -9,7 +12,7 @@ namespace AEMWebApplication.Models
         public double Longitude { get; set; } = 0.0;
         public DateTime CreatedAt { get; set; } =  DateTime.MinValue;
         public DateTime UpdatedAt { get; set; } = DateTime.MinValue;
-        public List<Well> Wells { get; set; }
+        public List<Well> well { get; set; }
 
 
         public class Well

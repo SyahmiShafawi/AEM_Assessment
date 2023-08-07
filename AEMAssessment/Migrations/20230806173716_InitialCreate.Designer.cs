@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AEMAssessment.Migrations
 {
     [DbContext(typeof(PlatformWellActualContext))]
-    [Migration("20230802023535_InitialCreate")]
+    [Migration("20230806173716_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -51,7 +51,7 @@ namespace AEMAssessment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlatformWellActuals");
+                    b.ToTable("PlatformWellActual");
                 });
 
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual+Well", b =>
@@ -95,13 +95,13 @@ namespace AEMAssessment.Migrations
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual+Well", b =>
                 {
                     b.HasOne("AEMWebApplication.Models.PlatformWellActual", null)
-                        .WithMany("Wells")
+                        .WithMany("well")
                         .HasForeignKey("PlatformWellActualId");
                 });
 
             modelBuilder.Entity("AEMWebApplication.Models.PlatformWellActual", b =>
                 {
-                    b.Navigation("Wells");
+                    b.Navigation("well");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,11 +12,11 @@ namespace AEMAssessment.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PlatformWellActuals",
+                name: "PlatformWellActual",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                        //.Annotation("SqlServer:Identity", "1, 1"),
                     UniqueName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Latitude = table.Column<double>(type: "float", nullable: false),
                     Longitude = table.Column<double>(type: "float", nullable: false),
@@ -25,15 +25,15 @@ namespace AEMAssessment.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlatformWellActuals", x => x.Id);
+                    table.PrimaryKey("PK_PlatformWellActual", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Well",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                        //.Annotation("SqlServer:Identity", "1, 1"),
                     PlatformId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UniqueName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Latitude = table.Column<double>(type: "float", nullable: false),
@@ -46,9 +46,9 @@ namespace AEMAssessment.Migrations
                 {
                     table.PrimaryKey("PK_Well", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Well_PlatformWellActuals_PlatformWellActualId",
+                        name: "FK_Well_PlatformWellActual_PlatformWellActualId",
                         column: x => x.PlatformWellActualId,
-                        principalTable: "PlatformWellActuals",
+                        principalTable: "PlatformWellActual",
                         principalColumn: "Id");
                 });
 
@@ -65,7 +65,7 @@ namespace AEMAssessment.Migrations
                 name: "Well");
 
             migrationBuilder.DropTable(
-                name: "PlatformWellActuals");
+                name: "PlatformWellActual");
         }
     }
 }
