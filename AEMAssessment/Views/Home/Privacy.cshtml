@@ -1,6 +1,75 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@using AEMWebApplication.Models;
+@{
+    ViewData["Title"] = "GetPlatformWellDummy";
+    @model List<PlatformWellActual>
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="text-center">
+@*    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+*@
+    <h1 class="display-4">Platform Well Actual Data</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Unique Name</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var platformWellActual in Model)
+            {
+                <tr>
+                    <td>@platformWellActual.Id</td>
+                    <td>@platformWellActual.Longitude</td>
+                    <td>@platformWellActual.Latitude</td>
+                    <td>@platformWellActual.UniqueName</td>
+                    <td>@platformWellActual.CreatedAt</td>
+                    <td>@platformWellActual.UpdatedAt</td>
+                    <!-- Add other columns as needed -->
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h1 class="display-4">Well Data</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Platform Id</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Unique Name</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var platformWellActual in Model)
+            {
+                foreach (var well in platformWellActual.well)
+                {
+                    <tr>
+                        <td>@well.Id</td>
+                        <td>@well.PlatformId</td>
+                        <td>@well.Longitude</td>
+                        <td>@well.Latitude</td>
+                        <td>@platformWellActual.UniqueName</td>
+                        <td>@well.CreatedAt</td>
+                        <td>@well.UpdatedAt</td>
+                        <!-- Add other columns as needed -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -30,6 +30,7 @@ namespace AEMAssessment.Controllers
 
         public async Task<IActionResult> Index()
         {
+            List<PlatformWellActual> platformWellActualList = null;
 
             bearerTokenFilter = GetDataFromCache("BearerTokenFilter");
             if (bearerTokenFilter == null)
@@ -63,7 +64,7 @@ namespace AEMAssessment.Controllers
 
                 if (getResponse != null)
                 {
-                    List<PlatformWellActual> platformWellActualList = JsonConvert.DeserializeObject<List<PlatformWellActual>>(getResponse);
+                    platformWellActualList = JsonConvert.DeserializeObject<List<PlatformWellActual>>(getResponse);
 
                     using (var dbContext = new PlatformWellActualContext(_configuration))
                     {
@@ -123,12 +124,13 @@ namespace AEMAssessment.Controllers
             //-----End request GetPlatformWellActual-----
 
 
-            return View();
+            return View(platformWellActualList);
         }
 
 
         public async Task<IActionResult> Privacy()
         {
+            List<PlatformWellActual> platformWellActualList = null;
 
             bearerTokenFilter = GetDataFromCache("BearerTokenFilter");
             if (bearerTokenFilter == null)
@@ -162,7 +164,7 @@ namespace AEMAssessment.Controllers
 
                 if (getResponse != null)
                 {
-                    List<PlatformWellActual> platformWellActualList = JsonConvert.DeserializeObject<List<PlatformWellActual>>(getResponse);
+                    platformWellActualList = JsonConvert.DeserializeObject<List<PlatformWellActual>>(getResponse);
 
                     using (var dbContext = new PlatformWellActualContext(_configuration))
                     {
@@ -222,7 +224,7 @@ namespace AEMAssessment.Controllers
 
             //-----End get request GetPlatformWellDummy-----
 
-            return View();
+            return View(platformWellActualList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
